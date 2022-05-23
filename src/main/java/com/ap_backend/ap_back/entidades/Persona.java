@@ -1,11 +1,9 @@
-package com.ap_backend.ap_back.modelo;
+package com.ap_backend.ap_back.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 
 @Entity
 public class Persona {
@@ -15,15 +13,14 @@ public class Persona {
     private Long id;
     private String nombre;
     private String apellido;
-    
-    public Persona() {
+
+    public Persona(){        
     }
 
     public Persona(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
-
 
     public Persona(Long id, String nombre, String apellido) {
         this.id = id;
@@ -56,5 +53,6 @@ public class Persona {
     }
 
     
+
     
 }
