@@ -53,9 +53,9 @@ public class Controlador {
     @PostMapping("/crear")
     public ResponseEntity<?> crearPersona(@RequestBody PersonaDTO personaDto) {
 
-        if(StringUtils.hasText(personaDto.getNombre()))
+        if(!StringUtils.hasText(personaDto.getNombre()))
            return new ResponseEntity<Mensaje>(new Mensaje("El nombre es requerido"),HttpStatus.BAD_REQUEST);
-        if(StringUtils.hasText(personaDto.getApellido()))
+        if(!StringUtils.hasText(personaDto.getApellido()))
            return new ResponseEntity<Mensaje>(new Mensaje("El apellido es requerido"), HttpStatus.BAD_REQUEST);
         Persona persona = new Persona(personaDto.getNombre(), personaDto.getApellido());
         servPersona.crearPersona(persona);
@@ -66,9 +66,9 @@ public class Controlador {
     public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody PersonaDTO personaDto) {
         if(!servPersona.existeId(id))
             return new ResponseEntity<Mensaje>(new Mensaje("Id no existe"), HttpStatus.NOT_FOUND);
-        if(StringUtils.hasText(personaDto.getNombre()))
+        if(!StringUtils.hasText(personaDto.getNombre()))
             return new ResponseEntity<Mensaje>(new Mensaje("El nombre es requerido"),HttpStatus.BAD_REQUEST);
-        if(StringUtils.hasText(personaDto.getApellido()))
+        if(!StringUtils.hasText(personaDto.getApellido()))
             return new ResponseEntity<Mensaje>(new Mensaje("El apellido es requerido"), HttpStatus.BAD_REQUEST);
         Persona persona = servPersona.buscarPersonaId(id);
         persona.setNombre(personaDto.getNombre());
