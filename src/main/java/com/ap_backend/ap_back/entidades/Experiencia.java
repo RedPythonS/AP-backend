@@ -11,6 +11,7 @@ public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long id_persona;
     private String lugar;
     private String puesto;
     private String desde;
@@ -18,21 +19,35 @@ public class Experiencia {
     private String descripcion;
     public Experiencia() {
     }
-    public Experiencia(String lugar, String puesto, String desde, String hasta, String descripcion) {
+
+    public Experiencia(Long id_persona, String lugar, String puesto, String desde, String hasta, String descripcion) {
+        this.id_persona = id_persona;
         this.lugar = lugar;
         this.puesto = puesto;
         this.desde = desde;
         this.hasta = hasta;
         this.descripcion = descripcion;
     }
-    public Experiencia(Long id, String lugar, String puesto, String desde, String hasta, String descripcion) {
+    
+    public Experiencia(Long id, Long id_persona, String lugar, String puesto, String desde, String hasta,
+            String descripcion) {
         this.id = id;
+        this.id_persona = id_persona;
         this.lugar = lugar;
         this.puesto = puesto;
         this.desde = desde;
         this.hasta = hasta;
         this.descripcion = descripcion;
     }
+
+    public Long getId_persona() {
+        return id_persona;
+    }
+
+    public void setId_persona(Long id_persona) {
+        this.id_persona = id_persona;
+    }
+
     public Long getId() {
         return id;
     }
