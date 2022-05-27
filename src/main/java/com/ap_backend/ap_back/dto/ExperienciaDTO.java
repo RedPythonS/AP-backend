@@ -1,48 +1,28 @@
-package com.ap_backend.ap_back.entidades;
+package com.ap_backend.ap_back.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
-@Entity
-public class Experiencia {
+public class ExperienciaDTO {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @NotBlank
     private String lugar;
+    @NotBlank
     private String puesto;
+    @NotBlank
     private String desde;
+    @NotBlank
     private String hasta;
+    @NotBlank
     private String descripcion;
-    public Experiencia() {
+    public ExperienciaDTO() {
     }
-
-    public Experiencia(String lugar, String puesto, String desde, String hasta, String descripcion) {
+    public ExperienciaDTO(@NotBlank String lugar, @NotBlank String puesto, @NotBlank String desde,
+            @NotBlank String hasta, @NotBlank String descripcion) {
         this.lugar = lugar;
         this.puesto = puesto;
         this.desde = desde;
         this.hasta = hasta;
         this.descripcion = descripcion;
-    }
-    
-    public Experiencia(Long id, String lugar, String puesto, String desde, String hasta,
-            String descripcion) {
-        this.id = id;
-        this.lugar = lugar;
-        this.puesto = puesto;
-        this.desde = desde;
-        this.hasta = hasta;
-        this.descripcion = descripcion;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
     }
     public String getLugar() {
         return lugar;

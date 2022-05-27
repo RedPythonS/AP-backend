@@ -11,36 +11,55 @@ public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long id_persona;
     private String lugar;
     private String titulo;
-    private String periodo;
+    private String start;
+    private String end;
+    
+    
+
     public Educacion() {
     }
 
-    public Educacion(Long id_persona, String lugar, String titulo, String periodo) {
-        this.id_persona = id_persona;
+    
+    public Educacion(String lugar, String titulo, String start, String end) {
         this.lugar = lugar;
         this.titulo = titulo;
-        this.periodo = periodo;
+        this.start = start;
+        this.end = end;
     }
 
     
-    public Educacion(Long id, Long id_persona, String lugar, String titulo, String periodo) {
+
+
+    public String getStart() {
+        return start;
+    }
+
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+
+    public String getEnd() {
+        return end;
+    }
+
+
+    public void setEnd(String end) {
+        this.end = end;
+    }
+
+
+    public Educacion(Long id, String lugar, String titulo, String start, String end) {
         this.id = id;
-        this.id_persona = id_persona;
         this.lugar = lugar;
         this.titulo = titulo;
-        this.periodo = periodo;
+        this.start = start;
+        this.end = end;
     }
 
-    public Long getId_persona() {
-        return id_persona;
-    }
-
-    public void setId_persona(Long id_persona) {
-        this.id_persona = id_persona;
-    }
 
     public Long getId() {
         return id;
@@ -60,13 +79,5 @@ public class Educacion {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    public String getPeriodo() {
-        return periodo;
-    }
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
-    }
 
-    
-    
 }

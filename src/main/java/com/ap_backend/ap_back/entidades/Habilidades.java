@@ -11,33 +11,24 @@ public class Habilidades {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long id_persona;
     private String nombre;
     private String detalle;
     private int nivel;
     public Habilidades() {
     }
-    public Habilidades(Long id_persona, String nombre, String detalle, int nivel) {
-        this.id_persona = id_persona;
+    public Habilidades(String nombre, String detalle, int nivel) {
         this.nombre = nombre;
         this.detalle = detalle;
         this.nivel = nivel;
     }
     
-    public Habilidades(Long id, Long id_persona, String nombre, String detalle, int nivel) {
+    public Habilidades(Long id, String nombre, String detalle, int nivel) {
         this.id = id;
-        this.id_persona = id_persona;
         this.nombre = nombre;
         this.detalle = detalle;
         this.nivel = nivel;
     }
     
-    public Long getId_persona() {
-        return id_persona;
-    }
-    public void setId_persona(Long id_persona) {
-        this.id_persona = id_persona;
-    }
     public Long getId() {
         return id;
     }

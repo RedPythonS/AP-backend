@@ -13,6 +13,11 @@ public class Persona {
     private Long id;
     private String nombre;
     private String apellido;
+    private String descripcion;
+    private String lugar;
+    private String contacto;
+    private String linkImagenFondo;
+    private String linkImagenFoto;
 
     public Persona(){        
     }
@@ -22,10 +27,69 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public Persona(Long id, String nombre, String apellido) {
+    public Persona(String nombre, String apellido, String descripcion, String lugar, String contacto,
+            String linkImagenFondo, String linkImagenFoto) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.descripcion = descripcion;
+        this.lugar = lugar;
+        this.contacto = contacto;
+        this.linkImagenFondo = linkImagenFondo;
+        this.linkImagenFoto = linkImagenFoto;
+    }
+
+    
+
+    public Persona(Long id, String nombre, String apellido, String descripcion, String lugar, String contacto,
+            String linkImagenFondo, String linkImagenFoto) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.descripcion = descripcion;
+        this.lugar = lugar;
+        this.contacto = contacto;
+        this.linkImagenFondo = linkImagenFondo;
+        this.linkImagenFoto = linkImagenFoto;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getContacto() {
+        return contacto;
+    }
+
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
+    }
+
+    public String getLinkImagenFondo() {
+        return linkImagenFondo;
+    }
+
+    public void setLinkImagenFondo(String linkImagenFondo) {
+        this.linkImagenFondo = linkImagenFondo;
+    }
+
+    public String getLinkImagenFoto() {
+        return linkImagenFoto;
+    }
+
+    public void setLinkImagenFoto(String linkImagenFoto) {
+        this.linkImagenFoto = linkImagenFoto;
     }
 
     public Long getId() {
