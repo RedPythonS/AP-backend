@@ -7,52 +7,29 @@ import javax.persistence.Id;
 
 @Entity
 public class Educacion {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
     private Long id;
     private String lugar;
     private String titulo;
-    private String start;
-    private String end;
+    private String desde;
+    private String hasta;
     public Educacion() {
     }
- 
-    public Educacion(String lugar, String titulo, String start, String end) {
+    public Educacion(String lugar, String titulo, String desde, String hasta) {
         this.lugar = lugar;
         this.titulo = titulo;
-        this.start = start;
-        this.end = end;
+        this.desde = desde;
+        this.hasta = hasta;
     }
-
-    
-    public Educacion(Long id, String lugar, String titulo, String start, String end) {
+    public Educacion(Long id, String lugar, String titulo, String desde, String hasta) {
         this.id = id;
         this.lugar = lugar;
         this.titulo = titulo;
-        this.start = start;
-        this.end = end;
+        this.desde = desde;
+        this.hasta = hasta;
     }
-
-    public String getStart() {
-        return start;
-    }
-
-
-    public void setStart(String start) {
-        this.start = start;
-    }
-
-
-    public String getEnd() {
-        return end;
-    }
-
-    public void setEnd(String end) {
-        this.end = end;
-    }
-
     public Long getId() {
         return id;
     }
@@ -71,5 +48,17 @@ public class Educacion {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
+    public String getDesde() {
+        return desde;
+    }
+    public void setDesde(String desde) {
+        this.desde = desde;
+    }
+    public String getHasta() {
+        return hasta;
+    }
+    public void setHasta(String hasta) {
+        this.hasta = hasta;
+    }
+    
 }
