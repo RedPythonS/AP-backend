@@ -15,13 +15,9 @@ public class Educacion {
     private String titulo;
     private String start;
     private String end;
-    
-    
-
     public Educacion() {
     }
-
-    
+ 
     public Educacion(String lugar, String titulo, String start, String end) {
         this.lugar = lugar;
         this.titulo = titulo;
@@ -30,7 +26,13 @@ public class Educacion {
     }
 
     
-
+    public Educacion(Long id, String lugar, String titulo, String start, String end) {
+        this.id = id;
+        this.lugar = lugar;
+        this.titulo = titulo;
+        this.start = start;
+        this.end = end;
+    }
 
     public String getStart() {
         return start;
@@ -46,20 +48,9 @@ public class Educacion {
         return end;
     }
 
-
     public void setEnd(String end) {
         this.end = end;
     }
-
-
-    public Educacion(Long id, String lugar, String titulo, String start, String end) {
-        this.id = id;
-        this.lugar = lugar;
-        this.titulo = titulo;
-        this.start = start;
-        this.end = end;
-    }
-
 
     public Long getId() {
         return id;

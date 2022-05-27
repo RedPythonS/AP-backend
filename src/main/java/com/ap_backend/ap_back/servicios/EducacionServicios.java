@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class EducacionServicios implements IEducacionServicios {
 
     @Autowired
-    private EducacionRepositorio repoEducacion;
+    EducacionRepositorio repoEducacion;
 
     @Override
     public List<Educacion> listado() {
