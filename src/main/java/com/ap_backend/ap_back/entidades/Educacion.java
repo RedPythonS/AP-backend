@@ -10,6 +10,7 @@ public class Educacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    
     private Long id;
     private String lugar;
     private String titulo;
