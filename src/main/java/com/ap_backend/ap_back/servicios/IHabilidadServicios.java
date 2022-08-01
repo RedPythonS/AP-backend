@@ -8,7 +8,7 @@ public interface IHabilidadServicios {
 
     public List<Habilidad> listado ();
     public Habilidad buscarHabilidadId (Long id);
-    public void crearHabilidad (Habilidad habilidades);
+    public void crearHabilidad (Habilidad habilidad);
     public boolean existeHabilidad (Long id);
     public void borrarHabilidad (Long id);
 }

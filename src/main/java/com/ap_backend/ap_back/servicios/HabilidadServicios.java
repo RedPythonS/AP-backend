@@ -25,8 +25,8 @@ public class HabilidadServicios implements IHabilidadServicios {
     }
 
     @Override
-    public void crearHabilidad(Habilidad habilidades) {
-        repoHabilidad.save(habilidades);
+    public void crearHabilidad(Habilidad habilidad) {
+        repoHabilidad.save(habilidad);
         
     }
 

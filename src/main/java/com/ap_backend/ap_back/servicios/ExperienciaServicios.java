@@ -32,7 +32,6 @@ public class ExperienciaServicios implements IExperienciaServicios {
 
     @Override
     public boolean existeExperiencia(Long id) {
-        // TODO Auto-generated method stub
         return repoExperiencia.existsById(id);
     }
 

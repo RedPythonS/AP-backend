@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Proyectos {
+public class Proyecto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,11 +16,11 @@ public class Proyectos {
     private String descripcion;
     private String link;
 
-    public Proyectos() {
+    public Proyecto() {
     }
 
     
-    public Proyectos(String nombre, String fecha, String descripcion, String link) {
+    public Proyecto(String nombre, String fecha, String descripcion, String link) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.descripcion = descripcion;
@@ -28,7 +28,7 @@ public class Proyectos {
     }
 
 
-    public Proyectos(Long id, String nombre, String fecha, String descripcion, String link) {
+    public Proyecto(Long id, String nombre, String fecha, String descripcion, String link) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;

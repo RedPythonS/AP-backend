@@ -57,7 +57,18 @@ public class Controlador {
            return new ResponseEntity<Mensaje>(new Mensaje("El nombre es requerido"),HttpStatus.BAD_REQUEST);
         if(!StringUtils.hasText(personaDto.getApellido()))
            return new ResponseEntity<Mensaje>(new Mensaje("El apellido es requerido"), HttpStatus.BAD_REQUEST);
-        Persona persona = new Persona(personaDto.getNombre(), personaDto.getApellido());
+        if(!StringUtils.hasText(personaDto.getDescripcion()))
+           return new ResponseEntity<Mensaje>(new Mensaje("La descripcion es requerida"), HttpStatus.BAD_REQUEST);
+        if(!StringUtils.hasText(personaDto.getLugar()))
+           return new ResponseEntity<Mensaje>(new Mensaje("El lugares requerido"), HttpStatus.BAD_REQUEST);
+        if(!StringUtils.hasText(personaDto.getContacto()))
+           return new ResponseEntity<Mensaje>(new Mensaje("El contacto es requerido"), HttpStatus.BAD_REQUEST);
+        if(!StringUtils.hasText(personaDto.getLinkImagenFondo()))
+           return new ResponseEntity<Mensaje>(new Mensaje("El link de imagen de fondo es requerido"), HttpStatus.BAD_REQUEST);
+        if(!StringUtils.hasText(personaDto.getLinkImagenFoto()))
+           return new ResponseEntity<Mensaje>(new Mensaje("El link de imagen de pefil es requerido"), HttpStatus.BAD_REQUEST);
+        Persona persona = new Persona(personaDto.getNombre(), personaDto.getApellido(), personaDto.getDescripcion(),
+        personaDto.getLugar(),personaDto.getContacto(),personaDto.getLinkImagenFondo(), personaDto.getLinkImagenFoto());
         servPersona.crearPersona(persona);
         return new ResponseEntity<Mensaje>(new Mensaje("Persona creada"),HttpStatus.OK);
     }
@@ -70,9 +81,24 @@ public class Controlador {
             return new ResponseEntity<Mensaje>(new Mensaje("El nombre es requerido"),HttpStatus.BAD_REQUEST);
         if(!StringUtils.hasText(personaDto.getApellido()))
             return new ResponseEntity<Mensaje>(new Mensaje("El apellido es requerido"), HttpStatus.BAD_REQUEST);
+            if(!StringUtils.hasText(personaDto.getDescripcion()))
+            return new ResponseEntity<Mensaje>(new Mensaje("La descripcion es requerida"), HttpStatus.BAD_REQUEST);
+            if(!StringUtils.hasText(personaDto.getLugar()))
+            return new ResponseEntity<Mensaje>(new Mensaje("El lugares requerido"), HttpStatus.BAD_REQUEST);
+            if(!StringUtils.hasText(personaDto.getContacto()))
+            return new ResponseEntity<Mensaje>(new Mensaje("El contacto es requerido"), HttpStatus.BAD_REQUEST);
+            if(!StringUtils.hasText(personaDto.getLinkImagenFondo()))
+            return new ResponseEntity<Mensaje>(new Mensaje("El link de imagen de fondo es requerido"), HttpStatus.BAD_REQUEST);
+            if(!StringUtils.hasText(personaDto.getLinkImagenFoto()))
+            return new ResponseEntity<Mensaje>(new Mensaje("El link de imagen de pefil es requerido"), HttpStatus.BAD_REQUEST);
         Persona persona = servPersona.buscarPersonaId(id);
         persona.setNombre(personaDto.getNombre());
         persona.setApellido(personaDto.getApellido());
+        persona.setDescripcion(personaDto.getDescripcion());
+        persona.setLugar(personaDto.getLugar());
+        persona.setContacto(personaDto.getContacto());
+        persona.setLinkImagenFondo(personaDto.getLinkImagenFondo());
+        persona.setLinkImagenFoto(personaDto.getLinkImagenFoto());
         servPersona.crearPersona(persona);
         return new ResponseEntity<Mensaje>(new Mensaje("Persona actualizada"),HttpStatus.OK);
     }

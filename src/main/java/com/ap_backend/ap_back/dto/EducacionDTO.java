@@ -12,20 +12,29 @@ public class EducacionDTO {
     private String desde;
     @NotBlank
     private String hasta;
+    @NotBlank
+    private String imagen;
     public EducacionDTO() {
     }
     public EducacionDTO(@NotBlank String lugar, @NotBlank String titulo, @NotBlank String desde,
-            @NotBlank String hasta) {
+            @NotBlank String hasta, @NotBlank String imagen) {
         this.lugar = lugar;
         this.titulo = titulo;
         this.desde = desde;
         this.hasta = hasta;
+        this.imagen = imagen;
     }
     public String getLugar() {
         return lugar;
     }
     public void setLugar(String lugar) {
         this.lugar = lugar;
+    }
+    public String getImagen() {
+        return imagen;
+    }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     public String getTitulo() {
         return titulo;

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Habilidades {
+public class Habilidad {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,15 +14,15 @@ public class Habilidades {
     private String nombre;
     private String detalle;
     private int nivel;
-    public Habilidades() {
+    public Habilidad() {
     }
-    public Habilidades(String nombre, String detalle, int nivel) {
+    public Habilidad(String nombre, String detalle, int nivel) {
         this.nombre = nombre;
         this.detalle = detalle;
         this.nivel = nivel;
     }
     
-    public Habilidades(Long id, String nombre, String detalle, int nivel) {
+    public Habilidad(Long id, String nombre, String detalle, int nivel) {
         this.id = id;
         this.nombre = nombre;
         this.detalle = detalle;

@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+#El archivo propiedades donde apaece usuario y clave de la DB
+/src/main/resources/application.properties
+
 ### STS ###
 .apt_generated
 .classpath

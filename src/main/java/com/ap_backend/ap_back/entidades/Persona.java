@@ -22,10 +22,6 @@ public class Persona {
     public Persona(){        
     }
 
-    public Persona(String nombre, String apellido) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
 
     public Persona(String nombre, String apellido, String descripcion, String lugar, String contacto,
             String linkImagenFondo, String linkImagenFoto) {

@@ -53,7 +53,9 @@ public class EducacionControlador {
             return new ResponseEntity<Mensaje>(new Mensaje("Se requiere el dato Desde"), HttpStatus.BAD_REQUEST);
         if (!StringUtils.hasText(educacionDto.getHasta()))
             return new ResponseEntity<Mensaje>(new Mensaje("Se requiere el dato Hasta"), HttpStatus.BAD_REQUEST);
-        Educacion educacion = new Educacion(educacionDto.getLugar(), educacionDto.getTitulo(), educacionDto.getDesde(), educacionDto.getHasta());
+        if (!StringUtils.hasText(educacionDto.getImagen()))
+            return new ResponseEntity<Mensaje>(new Mensaje("Se requiere el link de imagen"), HttpStatus.BAD_REQUEST);
+        Educacion educacion = new Educacion(educacionDto.getLugar(), educacionDto.getTitulo(), educacionDto.getDesde(), educacionDto.getHasta(), educacionDto.getImagen());
         servEducacion.crearEducacion(educacion);
             return new ResponseEntity<Mensaje>(new Mensaje("Educacion creada"), HttpStatus.OK);
     }
@@ -70,11 +72,14 @@ public class EducacionControlador {
             return new ResponseEntity<Mensaje>(new Mensaje("Se requiere el dato Desde"), HttpStatus.BAD_REQUEST);
         if (!StringUtils.hasText(educacionDto.getHasta()))
             return new ResponseEntity<Mensaje>(new Mensaje("Se requiere el dato Hasta"), HttpStatus.BAD_REQUEST);
+        if (!StringUtils.hasText(educacionDto.getImagen()))
+            return new ResponseEntity<Mensaje>(new Mensaje("Se requiere el link de imagen"), HttpStatus.BAD_REQUEST);
         Educacion educacion = servEducacion.buscarEducacionId(id);
         educacion.setLugar(educacionDto.getLugar());
         educacion.setTitulo(educacionDto.getTitulo());
         educacion.setDesde(educacionDto.getDesde());
         educacion.setHasta(educacionDto.getHasta());
+        educacion.setImagen(educacionDto.getImagen());
         servEducacion.crearEducacion(educacion);
             return new ResponseEntity<Mensaje>(new Mensaje("Educacion actualizada"), HttpStatus.OK);
     }

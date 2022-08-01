@@ -2,7 +2,7 @@ package com.ap_backend.ap_back.dto;
 
 import javax.validation.constraints.NotBlank;
 
-public class HabilidadesDTO {
+public class HabilidadDTO {
     
     @NotBlank
     private String nombre;
@@ -10,9 +10,9 @@ public class HabilidadesDTO {
     private String detalle;
     @NotBlank
     private int nivel;
-    public HabilidadesDTO() {
+    public HabilidadDTO() {
     }
-    public HabilidadesDTO(@NotBlank String nombre, @NotBlank String detalle, @NotBlank int nivel) {
+    public HabilidadDTO(@NotBlank String nombre, @NotBlank String detalle, @NotBlank int nivel) {
         this.nombre = nombre;
         this.detalle = detalle;
         this.nivel = nivel;

@@ -15,20 +15,23 @@ public class Educacion {
     private String titulo;
     private String desde;
     private String hasta;
+    private String imagen;
     public Educacion() {
     }
-    public Educacion(String lugar, String titulo, String desde, String hasta) {
+    public Educacion(String lugar, String titulo, String desde, String hasta, String imagen) {
         this.lugar = lugar;
         this.titulo = titulo;
         this.desde = desde;
         this.hasta = hasta;
+        this.imagen = imagen;
     }
-    public Educacion(Long id, String lugar, String titulo, String desde, String hasta) {
+    public Educacion(Long id, String lugar, String titulo, String desde, String hasta, String imagen) {
         this.id = id;
         this.lugar = lugar;
         this.titulo = titulo;
         this.desde = desde;
         this.hasta = hasta;
+        this.imagen = imagen;
     }
     public Long getId() {
         return id;
@@ -44,6 +47,12 @@ public class Educacion {
     }
     public String getTitulo() {
         return titulo;
+    }
+    public String getImagen() {
+        return imagen;
+    }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     public void setTitulo(String titulo) {
         this.titulo = titulo;

@@ -44,7 +44,7 @@ public class AcercaDeControlador {
     }
     
     @PostMapping("/crear")
-    public ResponseEntity<?> crearPersona(@RequestBody AcercaDeDTO acercaDto) {
+    public ResponseEntity<?> crearAcercaDe(@RequestBody AcercaDeDTO acercaDto) {
 
         if(!StringUtils.hasText(acercaDto.getDescripcion()))
            return new ResponseEntity<Mensaje>(new Mensaje("La descripcion es requerida"),HttpStatus.BAD_REQUEST);

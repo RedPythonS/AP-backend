@@ -2,7 +2,7 @@ package com.ap_backend.ap_back.dto;
 
 import javax.validation.constraints.NotBlank;
 
-public class ProyectosDTO {
+public class ProyectoDTO {
     
     @NotBlank
     private String nombre;
@@ -13,10 +13,10 @@ public class ProyectosDTO {
     @NotBlank
     private String link;
 
-    public ProyectosDTO() {
+    public ProyectoDTO() {
     }
     
-    public ProyectosDTO(@NotBlank String nombre, @NotBlank String fecha, @NotBlank String descripcion,
+    public ProyectoDTO(@NotBlank String nombre, @NotBlank String fecha, @NotBlank String descripcion,
             @NotBlank String link) {
         this.nombre = nombre;
         this.fecha = fecha;
